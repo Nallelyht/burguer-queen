@@ -1,0 +1,48 @@
+@import "../../styles/_variables.scss";
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 44px;
+  padding: 16px 32px;
+  max-width: 250px;
+  &:focus {
+    outline: none;
+  }
+
+  .button-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: $font;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    min-width: 314px;
+    &:active {
+      background: rgba(255, 287, 14, 0.13);
+    }
+    &:hover {
+      background: rgba(255, 287, 14, 0.13);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .menu-icon {
+    height: 40px;
+  }
+
+  .text-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    p{
+      margin: 0;
+    }
+  }
+}

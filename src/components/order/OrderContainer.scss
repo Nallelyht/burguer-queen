@@ -1,0 +1,45 @@
+@import "../../styles/_variables.scss";
+
+.order-container {
+  text-align: center;
+  font-size: 16px;
+  font-family: $font;
+
+  .order {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+
+  .order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    height: 44px;
+    min-width: 350px;
+    button {
+      background: none;
+      border: none;
+    }
+  }
+
+  .trash {
+    height: 45px;
+  }
+  .bill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: $font;
+    font-size: 32px;
+    padding: 16px;
+
+    p {
+      background: $softOrange;
+      font-family: $font;
+      padding: 32px 64px;
+      margin: 0;
+    }
+  }
+}

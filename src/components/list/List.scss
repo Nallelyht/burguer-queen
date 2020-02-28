@@ -1,0 +1,11 @@
+@import "../../styles/_variables.scss";
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}

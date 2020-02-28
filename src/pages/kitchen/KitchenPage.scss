@@ -1,0 +1,9 @@
+@import '../../styles/_variables.scss';
+
+.kitchen-container {
+	.kitchen-title {
+		font-size: $title;
+		font-family: $font;
+		color: $red;
+	}
+}

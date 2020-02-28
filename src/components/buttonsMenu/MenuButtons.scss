@@ -1,0 +1,30 @@
+@import "../../styles/_variables.scss";
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .button {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    &:active{
+     background: $softOrange
+    }
+    &:hover{
+      background: $softOrange
+     }
+    &:focus {
+      outline: none;
+    }
+    &_img {
+      height: 100px;
+    }
+    &_text {
+      color: $red;
+      font-family: $font;
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 0;
+    }
+  }
+}
