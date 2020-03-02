@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-
-import Home from './pages/home/Home'
 import Header from './components/header/Header'
 import OrderPage from './pages/order/OrderPage'
 import OrderContainer from './components/order/OrderContainer'
 import KitchenPage from './pages/kitchen/KitchenPage'
 import firebase from './utils/firebase'
+import crown from './assets/crown.svg'
 
-import './App.css'
+import './App.scss'
 class App extends Component {
   constructor (props) {
     super(props)
@@ -102,6 +101,25 @@ class App extends Component {
     })
   };
 
+  Home (handlerOrder, handlerKitchen) {
+    return <div className='home'>
+      <img className='home-logo' src={crown} alt='logo' />
+      <h1 className='home-title'>Burger Queen</h1>
+      <div className='home-container'>
+        <button
+          onClick={handlerOrder}
+          className='home-container_button'
+        >Pedidos
+        </button>
+        <button
+          onClick={handlerKitchen}
+          className='home-container_button'
+        >Cocina
+        </button>
+      </div>
+           </div>
+  }
+
   render () {
     const {
       menu,
@@ -116,10 +134,8 @@ class App extends Component {
     return (
       <div className='App'>
         {!menu && !kitchen && (
-          <Home
-            handlerOrder={this.handlerOrder}
-            handlerKitchen={this.handlerKitchen}
-          />
+          this.Home(this.handlerOrder,
+            this.handlerKitchen)
         )}
         {(menu || kitchen) && (
           <Header

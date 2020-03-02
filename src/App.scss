@@ -1,5 +1,7 @@
-@import "../../styles/_variables.scss";
-
+@import "./styles/_variables.scss";
+.App {
+  text-align: center;
+}
 .home {
   background: $color-primary;
   height: 100vh;
