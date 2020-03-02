@@ -41,3 +41,39 @@
     }
   }
 }
+.header {
+  background: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  .back {
+    &_button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      border: none;
+      &_img {
+        height: 50px;
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .logo {
+    display: flex;
+    min-width: 324px;
+    justify-content: space-between;
+    align-items: center;
+    &_img {
+      height: 50px;
+    }
+    &_text {
+      color: $red;
+      font-size: 32px;
+      font-weight: bold;
+    }
+  }
+}

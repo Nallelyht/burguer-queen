@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Header from './components/header/Header'
 import OrderPage from './pages/order/OrderPage'
 import OrderContainer from './components/order/OrderContainer'
 import KitchenPage from './pages/kitchen/KitchenPage'
 import firebase from './utils/firebase'
 import crown from './assets/crown.svg'
+import back from './assets/left-arrow.svg'
 
 import './App.scss'
 class App extends Component {
@@ -102,22 +102,38 @@ class App extends Component {
   };
 
   Home (handlerOrder, handlerKitchen) {
-    return <div className='home'>
-      <img className='home-logo' src={crown} alt='logo' />
-      <h1 className='home-title'>Burger Queen</h1>
-      <div className='home-container'>
-        <button
-          onClick={handlerOrder}
-          className='home-container_button'
-        >Pedidos
-        </button>
-        <button
-          onClick={handlerKitchen}
-          className='home-container_button'
-        >Cocina
-        </button>
+    return (
+      <div className='home'>
+        <img className='home-logo' src={crown} alt='logo' />
+        <h1 className='home-title'>Burger Queen</h1>
+        <div className='home-container'>
+          <button
+            onClick={handlerOrder}
+            className='home-container_button'
+          >Pedidos
+          </button>
+          <button
+            onClick={handlerKitchen}
+            className='home-container_button'
+          >Cocina
+          </button>
+        </div>
       </div>
-           </div>
+    )
+  };
+
+  Header (handlerOrder, handlerKitchen, menu) {
+    return (
+      <header className='header'>
+        <button onClick={menu ? handlerOrder : handlerKitchen} className='back_button'>
+          <img src={back} alt='back' className='back_button_img' />
+        </button>
+        <div className='logo'>
+          <span className='logo_text'>Burguer Queen</span>
+          <img src={crown} alt='crown' className='logo_img' />
+        </div>
+      </header>
+    )
   }
 
   render () {
@@ -138,12 +154,7 @@ class App extends Component {
             this.handlerKitchen)
         )}
         {(menu || kitchen) && (
-          <Header
-            handlerOrder={this.handlerOrder}
-            handlerKitchen={this.handlerKitchen}
-            menu={menu}
-            addCustomerName={this.addCustomerName}
-          />
+          this.Header(this.handlerOrder, this.handlerKitchen, menu)
         )}
         {menu && (
           <OrderPage
